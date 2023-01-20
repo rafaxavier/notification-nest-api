@@ -1,0 +1,11 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#5D0E16",
+        "titleBar.activeBackground": "#82141E",
+        "titleBar.activeForeground": "#FEFBFB"
+    },
+
+    "[prisma]": {
+        "editor.formatOnSave": true,
+      },
+}
