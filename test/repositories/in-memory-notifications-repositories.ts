@@ -4,6 +4,18 @@ import { NotificationRepository } from '@application/repositories/notifications-
 export class InMemoryNotificationsRepository implements NotificationRepository {
   public notifications: Notification[] = [];
 
+  async findManyByRecipientId(recipientId: string): Promise<Notification[]> {
+    return this.notifications.filter(
+      (notification) => notification.recipientId == recipientId,
+    );
+  }
+
+  async countManyByRecipientId(recipientId: string): Promise<number> {
+    return this.notifications.filter(
+      (notification) => notification.recipientId == recipientId,
+    ).length;
+  }
+
   async findById(notificationtId: string): Promise<Notification | null> {
     const notification = this.notifications.find(
       (item) => item.id == notificationtId,
